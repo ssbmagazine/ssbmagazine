@@ -27,12 +27,14 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
         mb: 4,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundPosition: "left",
         backgroundImage: `url(${post.image})`,
+        minHeight: 400
       }}
     >
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+
+      {<img style={{ display: 'none'}} src={post.image} alt={post.imageText} />}
       <Box
         sx={{
           position: 'absolute',
@@ -43,7 +45,7 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
           backgroundColor: 'rgba(0,0,0,.3)',
         }}
       />
-      <Grid container>
+      <Grid container justifyContent={"flex-end"} alignItems={"flex-end"}>
         <Grid item md={6}>
           <Box
             sx={{
@@ -52,10 +54,10 @@ export default function MainFeaturedPost(props: MainFeaturedPostProps) {
               pr: { md: 0 },
             }}
           >
-            <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+            <Typography component="h1" variant="h3" color="inherit" fontFamily={"Vani"} gutterBottom>
               {post.title}
             </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
+            <Typography variant="h6" color="inherit" fontFamily={"Vani"} align={"left"} paragraph>
               {post.description}
             </Typography>
             <Link variant="subtitle1" href="#">

@@ -23,20 +23,28 @@ export default function Sidebar(props: SidebarProps) {
 
   return (
     <Grid item xs={12} md={4}>
-      <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>
-        <Typography variant="h6" gutterBottom>
-          {title}
-        </Typography>
-        <Typography>{description}</Typography>
-      </Paper>
-      <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-        Archives
-      </Typography>
-      {archives.map((archive) => (
-        <Link display="block" variant="body1" href={archive.url} key={archive.title}>
-          {archive.title}
-        </Link>
-      ))}
+        <Grid container direction={"row"} spacing={2} gap={3} justifyContent={"space-evenly"}>
+
+           {/*<Grid>*/}
+           {/*    <Paper elevation={0} sx={{ p: 2, bgcolor: 'grey.200' }}>*/}
+           {/*        <Typography variant="h6" gutterBottom>*/}
+           {/*            {title}*/}
+           {/*        </Typography>*/}
+           {/*        <Typography>{description}</Typography>*/}
+           {/*    </Paper>*/}
+           {/*</Grid>*/}
+            <Grid>
+
+                <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
+                    Archives
+                </Typography>
+                {archives.map((archive) => (
+                    <Link display="block" variant="body1" href={archive.url} key={archive.title}>
+                        {archive.title}
+                    </Link>
+                ))}
+            </Grid>
+        </Grid>
       <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
         Social
       </Typography>

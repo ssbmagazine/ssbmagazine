@@ -2,9 +2,9 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
-// import GitHubIcon from '@mui/icons-material/GitHub';
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
@@ -12,30 +12,31 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
-import post1 from './blog-post.1.md';
-import post2 from './blog-post.2.md';
-import post3 from './blog-post.3.md';
+import Carousel from "./Carousel";
+// import post1 from './blog-post-1.md';
+// import './blog-post.2.md';
+// import './blog-post.3.md';
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'Present Volume', url: '#' },
+  { title: 'Serials', url: '#' },
+  { title: 'Archives', url: '#' },
+  { title: 'About us', url: '#' },
+  { title: 'Subscribe / Renew', url: '#' },
+  // { title: 'Opinion', url: '#' },
+  // { title: 'Science', url: '#' },
+  // { title: 'Health', url: '#' },
+  // { title: 'Style', url: '#' },
+  // { title: 'Travel', url: '#' },
 ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'హృదయాన్ని విశాలం గావించే చదువే నిజమైన చదువు',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random?wallpapers',
+    "భగవాన్ శ్రీ సత్య సాయి ",
+  image: 'https://raleighsaicenter.org/wp-content/uploads/SSEHeader.png',
   imageText: 'main image description',
-  linkText: 'Continue reading…',
+  linkText: '',
 };
 
 const featuredPosts = [
@@ -57,12 +58,12 @@ const featuredPosts = [
   },
 ];
 
-const posts = [post1, post2, post3];
+// const posts = [post1, post2, post3];
 
 const sidebar = {
   title: 'About',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    '',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
@@ -76,11 +77,11 @@ const sidebar = {
     { title: 'May 1999', url: '#' },
     { title: 'April 1999', url: '#' },
   ],
-  // social: [
-  //   { name: 'GitHub', icon: GitHubIcon },
-  //   { name: 'Twitter', icon: TwitterIcon },
-  //   { name: 'Facebook', icon: FacebookIcon },
-  // ],
+  social: [
+    { name: 'GitHub', icon: GitHubIcon },
+    { name: 'Twitter', icon: TwitterIcon },
+    { name: 'Facebook', icon: FacebookIcon },
+  ],
 };
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -91,16 +92,18 @@ export default function Blog() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        <Header title="సత్యసాయి బాలవికాస్ మాసపత్రిక" subtitle={"Sathya Sai Balavikas - Telugu Monthly Magazine"} sections={sections} />
+
         <main>
+          {/*<Carousel/>*/}
           <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid>
+          {/*<Grid container spacing={4}>*/}
+          {/*  {featuredPosts.map((post) => (*/}
+          {/*    <FeaturedPost key={post.title} post={post} />*/}
+          {/*  ))}*/}
+          {/*</Grid>*/}
           <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={posts} />
+            {/*<Main title="From the firehose" posts={posts} />*/}
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
