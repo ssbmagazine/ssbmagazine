@@ -13,9 +13,11 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import Carousel from "./Carousel";
+import PdfViewer from "./PDFViewer";
 // import post1 from './blog-post-1.md';
 // import './blog-post.2.md';
 // import './blog-post.3.md';
+import jan2002 from './resources/2002/jan2002.pdf'
 
 const sections = [
   { title: 'Present Volume', url: '#' },
