@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="te">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="సత్యసాయి బాలవికాస్ — Sathya Sai Balavikas, a Telugu monthly magazine."
+    />
+    <title>సత్యసాయి బాలవికాస్</title>
+    <script>
+      try {
+        const theme =
+          localStorage.getItem("ssb:theme") ||
+          (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.lang = localStorage.getItem("ssb:lang") || "te";
+      } catch (_) {
+        /* ignore */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

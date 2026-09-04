@@ -1,0 +1,78 @@
+{
+  "langName": "English",
+  "langCode": "EN",
+  "siteTitle": "Sathya Sai Balavikas",
+  "siteSubtitle": "Telugu Monthly Magazine",
+  "nav": {
+    "home": "Home",
+    "archive": "Archive",
+    "about": "About",
+    "subscribe": "Subscribe",
+    "search": "Search"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "home": {
+    "kicker": "A Telugu monthly",
+    "intro": "A magazine that has reached children and families for twenty-five years.",
+    "heroCaption": "Bhagawan Sri Sathya Sai Baba with children — photograph to come.",
+    "latest": "Latest issue",
+    "readIssue": "Read",
+    "browseArchive": "Browse the archive"
+  },
+  "archive": {
+    "title": "The archive",
+    "lede": "Monthly issues, arranged by year. Open a cover and read without leaving the page.",
+    "all": "All",
+    "decade": "{0}s",
+    "latest": "Latest issue",
+    "issues": "{0} issues",
+    "special": "Special",
+    "empty": "No issues in this period.",
+    "open": "Open"
+  },
+  "reader": {
+    "close": "Back to archive",
+    "page": "Page {0} of {1}",
+    "zoomOut": "Smaller",
+    "zoomIn": "Larger",
+    "fit": "Fit width",
+    "prevIssue": "Previous issue",
+    "nextIssue": "Next issue",
+    "download": "Download",
+    "loading": "Loading the issue…",
+    "error": "This issue could not be opened. Please try again.",
+    "missing": "This issue was not found."
+  },
+  "about": {
+    "title": "About us",
+    "lede": "Names for the editorial, design, and writing teams will sit here once they are decided.",
+    "editorial": "Editorial",
+    "design": "Design",
+    "content": "Writing",
+    "placeholder": "Names still to be confirmed."
+  },
+  "subscribe": {
+    "title": "Subscribe",
+    "lede": "A small magazine. There is no payment gateway — scan the QR code and send us a message.",
+    "how": "How to subscribe",
+    "step1": "Scan the QR code below.",
+    "step2": "Send your name, address, and phone number in a message.",
+    "step3": "New subscriptions and renewals follow the same steps.",
+    "qrCaption": "The QR image will appear here shortly.",
+    "note": "Rates and postal details will be listed here after the team confirms them."
+  },
+  "search": {
+    "title": "Search",
+    "lede": "Article search is being built separately. It will live on this page when it is ready.",
+    "note": "Older issues are PDFs for now. Search will work better once Telugu articles can sit in the page itself."
+  },
+  "footer": {
+    "blurb": "Sathya Sai Balavikas, a Telugu monthly magazine.",
+    "socials": "Social",
+    "banners": "Promotional banners will be available to download here later.",
+    "copy": "© {0} Sathya Sai Balavikas"
+  }
+}

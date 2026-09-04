@@ -1,0 +1,170 @@
+[
+  {
+    "id": "2002-01",
+    "year": 2002,
+    "month": 1,
+    "type": "monthly",
+    "slug": "01",
+    "title": {
+      "te": "జనవరి 2002",
+      "en": "January 2002"
+    },
+    "pdf": "issues/2002/01.pdf",
+    "cover": "covers/2002/01.jpg",
+    "pageCount": 26
+  },
+  {
+    "id": "2002-02",
+    "year": 2002,
+    "month": 2,
+    "type": "monthly",
+    "slug": "02",
+    "title": {
+      "te": "ఫిబ్రవరి 2002",
+      "en": "February 2002"
+    },
+    "pdf": "issues/2002/02.pdf",
+    "cover": "covers/2002/02.jpg",
+    "pageCount": 21
+  },
+  {
+    "id": "2002-03",
+    "year": 2002,
+    "month": 3,
+    "type": "monthly",
+    "slug": "03",
+    "title": {
+      "te": "మార్చి 2002",
+      "en": "March 2002"
+    },
+    "pdf": "issues/2002/03.pdf",
+    "cover": "covers/2002/03.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-04",
+    "year": 2002,
+    "month": 4,
+    "type": "monthly",
+    "slug": "04",
+    "title": {
+      "te": "ఏప్రిల్ 2002",
+      "en": "April 2002"
+    },
+    "pdf": "issues/2002/04.pdf",
+    "cover": "covers/2002/04.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2002-05",
+    "year": 2002,
+    "month": 5,
+    "type": "monthly",
+    "slug": "05",
+    "title": {
+      "te": "మే 2002",
+      "en": "May 2002"
+    },
+    "pdf": "issues/2002/05.pdf",
+    "cover": "covers/2002/05.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-06",
+    "year": 2002,
+    "month": 6,
+    "type": "monthly",
+    "slug": "06",
+    "title": {
+      "te": "జూన్ 2002",
+      "en": "June 2002"
+    },
+    "pdf": "issues/2002/06.pdf",
+    "cover": "covers/2002/06.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-07",
+    "year": 2002,
+    "month": 7,
+    "type": "monthly",
+    "slug": "07",
+    "title": {
+      "te": "జూలై 2002",
+      "en": "July 2002"
+    },
+    "pdf": "issues/2002/07.pdf",
+    "cover": "covers/2002/07.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-08",
+    "year": 2002,
+    "month": 8,
+    "type": "monthly",
+    "slug": "08",
+    "title": {
+      "te": "ఆగస్టు 2002",
+      "en": "August 2002"
+    },
+    "pdf": "issues/2002/08.pdf",
+    "cover": "covers/2002/08.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-09",
+    "year": 2002,
+    "month": 9,
+    "type": "monthly",
+    "slug": "09",
+    "title": {
+      "te": "సెప్టెంబర్ 2002",
+      "en": "September 2002"
+    },
+    "pdf": "issues/2002/09.pdf",
+    "cover": "covers/2002/09.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2002-10",
+    "year": 2002,
+    "month": 10,
+    "type": "monthly",
+    "slug": "10",
+    "title": {
+      "te": "అక్టోబర్ 2002",
+      "en": "October 2002"
+    },
+    "pdf": "issues/2002/10.pdf",
+    "cover": "covers/2002/10.jpg",
+    "pageCount": 26
+  },
+  {
+    "id": "2002-11",
+    "year": 2002,
+    "month": 11,
+    "type": "monthly",
+    "slug": "11",
+    "title": {
+      "te": "నవంబర్ 2002",
+      "en": "November 2002"
+    },
+    "pdf": "issues/2002/11.pdf",
+    "cover": "covers/2002/11.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2002-12",
+    "year": 2002,
+    "month": 12,
+    "type": "monthly",
+    "slug": "12",
+    "title": {
+      "te": "డిసెంబర్ 2002",
+      "en": "December 2002"
+    },
+    "pdf": "issues/2002/12.pdf",
+    "cover": "covers/2002/12.jpg",
+    "pageCount": 25
+  }
+]
