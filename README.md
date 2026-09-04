@@ -21,4 +21,8 @@ Drop later PDFs into `public/issues/YYYY/MM.pdf` (or a named slug for specials),
 - `/archive/:year/:slug` — in-app PDF reader
 - `/about`, `/subscribe`, `/search` — placeholders until copy and search exist
 
+## Deploy
+
+GitHub Actions builds on `rebuild` / `main` / `master`. It only **deploys** from `main` or `master` (the `github-pages` environment is usually limited to those branches). In the repo settings, set Pages source to **GitHub Actions**.
+
 Do not store PDFs in Git LFS. GitHub Pages serves LFS pointer files instead of the documents.

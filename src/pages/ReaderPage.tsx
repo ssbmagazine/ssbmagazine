@@ -136,14 +136,16 @@ export function ReaderPage() {
 
   useEffect(() => {
     if (!pdf || currentPage <= 1) return;
-    const id = requestAnimationFrame(() => scrollToPage(currentPage, "instant"));
+    const id = requestAnimationFrame(() => scrollToPage(currentPage, "auto"));
     return () => cancelAnimationFrame(id);
   }, [pdf]);
 
   function scrollToPage(page: number, behavior: ScrollBehavior = "smooth") {
-    const target = pagesRef.current?.querySelector(`[data-page="${page}"]`);
+    if (pageCount < 1) return;
+    const clamped = Math.min(Math.max(1, page), pageCount);
+    const target = pagesRef.current?.querySelector(`[data-page="${clamped}"]`);
     target?.scrollIntoView({ behavior, block: "start" });
-    setCurrentPage(page);
+    setCurrentPage(clamped);
   }
 
   if (!issue) {
@@ -187,7 +189,13 @@ export function ReaderPage() {
           <button type="button" className="icon-btn" onClick={() => setLang(lang === "te" ? "en" : "te")}>
             {lang === "te" ? "EN" : "తె"}
           </button>
-          <button type="button" className="icon-btn" onClick={toggleTheme} aria-label={theme}>
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={toggleTheme}
+            aria-pressed={theme === "dark"}
+            aria-label={theme === "dark" ? t.theme.light : t.theme.dark}
+          >
             {theme === "dark" ? "Aa" : "A"}
           </button>
         </div>
