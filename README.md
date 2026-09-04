@@ -23,6 +23,12 @@ Drop later PDFs into `public/issues/YYYY/MM.pdf` (or a named slug for specials),
 
 ## Deploy
 
-GitHub Actions builds on `rebuild` / `main` / `master`. It only **deploys** from `main` or `master` (the `github-pages` environment is usually limited to those branches). In the repo settings, set Pages source to **GitHub Actions**.
+1. Open **Settings → Pages → Build and deployment**.
+2. Set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+3. Merge or push to `master` / `main`, or re-run the **Deploy to GitHub Pages** workflow.
+
+If Source stays on a branch, GitHub serves the repo’s raw `index.html` (it asks for `/src/main.tsx`, which 404s and you get a blank page). The Actions build artifact is correct; Pages just isn’t using it until that setting is changed.
+
+The site URL is: `https://ssbmagazine.github.io/ssbmagazine/`
 
 Do not store PDFs in Git LFS. GitHub Pages serves LFS pointer files instead of the documents.
