@@ -166,5 +166,495 @@
     "pdf": "issues/2002/12.pdf",
     "cover": "covers/2002/12.jpg",
     "pageCount": 25
+  },
+  {
+    "id": "2003-01",
+    "year": 2003,
+    "month": 1,
+    "type": "monthly",
+    "slug": "01",
+    "title": {
+      "te": "జనవరి 2003",
+      "en": "January 2003"
+    },
+    "pdf": "issues/2003/01.pdf",
+    "cover": "covers/2003/01.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-02",
+    "year": 2003,
+    "month": 2,
+    "type": "monthly",
+    "slug": "02",
+    "title": {
+      "te": "ఫిబ్రవరి 2003",
+      "en": "February 2003"
+    },
+    "pdf": "issues/2003/02.pdf",
+    "cover": "covers/2003/02.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-04",
+    "year": 2003,
+    "month": 4,
+    "type": "monthly",
+    "slug": "04",
+    "title": {
+      "te": "ఏప్రిల్ 2003",
+      "en": "April 2003"
+    },
+    "pdf": "issues/2003/04.pdf",
+    "cover": "covers/2003/04.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2003-05",
+    "year": 2003,
+    "month": 5,
+    "type": "monthly",
+    "slug": "05",
+    "title": {
+      "te": "మే 2003",
+      "en": "May 2003"
+    },
+    "pdf": "issues/2003/05.pdf",
+    "cover": "covers/2003/05.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-06",
+    "year": 2003,
+    "month": 6,
+    "type": "monthly",
+    "slug": "06",
+    "title": {
+      "te": "జూన్ 2003",
+      "en": "June 2003"
+    },
+    "pdf": "issues/2003/06.pdf",
+    "cover": "covers/2003/06.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-07",
+    "year": 2003,
+    "month": 7,
+    "type": "monthly",
+    "slug": "07",
+    "title": {
+      "te": "జూలై 2003",
+      "en": "July 2003"
+    },
+    "pdf": "issues/2003/07.pdf",
+    "cover": "covers/2003/07.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-08",
+    "year": 2003,
+    "month": 8,
+    "type": "monthly",
+    "slug": "08",
+    "title": {
+      "te": "ఆగస్టు 2003",
+      "en": "August 2003"
+    },
+    "pdf": "issues/2003/08.pdf",
+    "cover": "covers/2003/08.jpg",
+    "pageCount": 27
+  },
+  {
+    "id": "2003-09",
+    "year": 2003,
+    "month": 9,
+    "type": "monthly",
+    "slug": "09",
+    "title": {
+      "te": "సెప్టెంబర్ 2003",
+      "en": "September 2003"
+    },
+    "pdf": "issues/2003/09.pdf",
+    "cover": "covers/2003/09.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-10",
+    "year": 2003,
+    "month": 10,
+    "type": "monthly",
+    "slug": "10",
+    "title": {
+      "te": "అక్టోబర్ 2003",
+      "en": "October 2003"
+    },
+    "pdf": "issues/2003/10.pdf",
+    "cover": "covers/2003/10.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2003-11",
+    "year": 2003,
+    "month": 11,
+    "type": "monthly",
+    "slug": "11",
+    "title": {
+      "te": "నవంబర్ 2003",
+      "en": "November 2003"
+    },
+    "pdf": "issues/2003/11.pdf",
+    "cover": "covers/2003/11.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2003-12",
+    "year": 2003,
+    "month": 12,
+    "type": "monthly",
+    "slug": "12",
+    "title": {
+      "te": "డిసెంబర్ 2003",
+      "en": "December 2003"
+    },
+    "pdf": "issues/2003/12.pdf",
+    "cover": "covers/2003/12.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-01",
+    "year": 2004,
+    "month": 1,
+    "type": "monthly",
+    "slug": "01",
+    "title": {
+      "te": "జనవరి 2004",
+      "en": "January 2004"
+    },
+    "pdf": "issues/2004/01.pdf",
+    "cover": "covers/2004/01.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-02",
+    "year": 2004,
+    "month": 2,
+    "type": "monthly",
+    "slug": "02",
+    "title": {
+      "te": "ఫిబ్రవరి 2004",
+      "en": "February 2004"
+    },
+    "pdf": "issues/2004/02.pdf",
+    "cover": "covers/2004/02.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-03",
+    "year": 2004,
+    "month": 3,
+    "type": "monthly",
+    "slug": "03",
+    "title": {
+      "te": "మార్చి 2004",
+      "en": "March 2004"
+    },
+    "pdf": "issues/2004/03.pdf",
+    "cover": "covers/2004/03.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2004-04",
+    "year": 2004,
+    "month": 4,
+    "type": "monthly",
+    "slug": "04",
+    "title": {
+      "te": "ఏప్రిల్ 2004",
+      "en": "April 2004"
+    },
+    "pdf": "issues/2004/04.pdf",
+    "cover": "covers/2004/04.jpg",
+    "pageCount": 28
+  },
+  {
+    "id": "2004-05",
+    "year": 2004,
+    "month": 5,
+    "type": "monthly",
+    "slug": "05",
+    "title": {
+      "te": "మే 2004",
+      "en": "May 2004"
+    },
+    "pdf": "issues/2004/05.pdf",
+    "cover": "covers/2004/05.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-06",
+    "year": 2004,
+    "month": 6,
+    "type": "monthly",
+    "slug": "06",
+    "title": {
+      "te": "జూన్ 2004",
+      "en": "June 2004"
+    },
+    "pdf": "issues/2004/06.pdf",
+    "cover": "covers/2004/06.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-07",
+    "year": 2004,
+    "month": 7,
+    "type": "monthly",
+    "slug": "07",
+    "title": {
+      "te": "జూలై 2004",
+      "en": "July 2004"
+    },
+    "pdf": "issues/2004/07.pdf",
+    "cover": "covers/2004/07.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-08",
+    "year": 2004,
+    "month": 8,
+    "type": "monthly",
+    "slug": "08",
+    "title": {
+      "te": "ఆగస్టు 2004",
+      "en": "August 2004"
+    },
+    "pdf": "issues/2004/08.pdf",
+    "cover": "covers/2004/08.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-09",
+    "year": 2004,
+    "month": 9,
+    "type": "monthly",
+    "slug": "09",
+    "title": {
+      "te": "సెప్టెంబర్ 2004",
+      "en": "September 2004"
+    },
+    "pdf": "issues/2004/09.pdf",
+    "cover": "covers/2004/09.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-10",
+    "year": 2004,
+    "month": 10,
+    "type": "monthly",
+    "slug": "10",
+    "title": {
+      "te": "అక్టోబర్ 2004",
+      "en": "October 2004"
+    },
+    "pdf": "issues/2004/10.pdf",
+    "cover": "covers/2004/10.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2004-11",
+    "year": 2004,
+    "month": 11,
+    "type": "monthly",
+    "slug": "11",
+    "title": {
+      "te": "నవంబర్ 2004",
+      "en": "November 2004"
+    },
+    "pdf": "issues/2004/11.pdf",
+    "cover": "covers/2004/11.jpg",
+    "pageCount": 33
+  },
+  {
+    "id": "2004-12",
+    "year": 2004,
+    "month": 12,
+    "type": "monthly",
+    "slug": "12",
+    "title": {
+      "te": "డిసెంబర్ 2004",
+      "en": "December 2004"
+    },
+    "pdf": "issues/2004/12.pdf",
+    "cover": "covers/2004/12.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-01",
+    "year": 2005,
+    "month": 1,
+    "type": "monthly",
+    "slug": "01",
+    "title": {
+      "te": "జనవరి 2005",
+      "en": "January 2005"
+    },
+    "pdf": "issues/2005/01.pdf",
+    "cover": "covers/2005/01.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-02",
+    "year": 2005,
+    "month": 2,
+    "type": "monthly",
+    "slug": "02",
+    "title": {
+      "te": "ఫిబ్రవరి 2005",
+      "en": "February 2005"
+    },
+    "pdf": "issues/2005/02.pdf",
+    "cover": "covers/2005/02.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-03",
+    "year": 2005,
+    "month": 3,
+    "type": "monthly",
+    "slug": "03",
+    "title": {
+      "te": "మార్చి 2005",
+      "en": "March 2005"
+    },
+    "pdf": "issues/2005/03.pdf",
+    "cover": "covers/2005/03.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-04",
+    "year": 2005,
+    "month": 4,
+    "type": "monthly",
+    "slug": "04",
+    "title": {
+      "te": "ఏప్రిల్ 2005",
+      "en": "April 2005"
+    },
+    "pdf": "issues/2005/04.pdf",
+    "cover": "covers/2005/04.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-05",
+    "year": 2005,
+    "month": 5,
+    "type": "monthly",
+    "slug": "05",
+    "title": {
+      "te": "మే 2005",
+      "en": "May 2005"
+    },
+    "pdf": "issues/2005/05.pdf",
+    "cover": "covers/2005/05.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-06",
+    "year": 2005,
+    "month": 6,
+    "type": "monthly",
+    "slug": "06",
+    "title": {
+      "te": "జూన్ 2005",
+      "en": "June 2005"
+    },
+    "pdf": "issues/2005/06.pdf",
+    "cover": "covers/2005/06.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-07",
+    "year": 2005,
+    "month": 7,
+    "type": "monthly",
+    "slug": "07",
+    "title": {
+      "te": "జూలై 2005",
+      "en": "July 2005"
+    },
+    "pdf": "issues/2005/07.pdf",
+    "cover": "covers/2005/07.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-08",
+    "year": 2005,
+    "month": 8,
+    "type": "monthly",
+    "slug": "08",
+    "title": {
+      "te": "ఆగస్టు 2005",
+      "en": "August 2005"
+    },
+    "pdf": "issues/2005/08.pdf",
+    "cover": "covers/2005/08.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-09",
+    "year": 2005,
+    "month": 9,
+    "type": "monthly",
+    "slug": "09",
+    "title": {
+      "te": "సెప్టెంబర్ 2005",
+      "en": "September 2005"
+    },
+    "pdf": "issues/2005/09.pdf",
+    "cover": "covers/2005/09.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-10",
+    "year": 2005,
+    "month": 10,
+    "type": "monthly",
+    "slug": "10",
+    "title": {
+      "te": "అక్టోబర్ 2005",
+      "en": "October 2005"
+    },
+    "pdf": "issues/2005/10.pdf",
+    "cover": "covers/2005/10.jpg",
+    "pageCount": 25
+  },
+  {
+    "id": "2005-11",
+    "year": 2005,
+    "month": 11,
+    "type": "monthly",
+    "slug": "11",
+    "title": {
+      "te": "నవంబర్ 2005",
+      "en": "November 2005"
+    },
+    "pdf": "issues/2005/11.pdf",
+    "cover": "covers/2005/11.jpg",
+    "pageCount": 81
+  },
+  {
+    "id": "2005-12",
+    "year": 2005,
+    "month": 12,
+    "type": "monthly",
+    "slug": "12",
+    "title": {
+      "te": "డిసెంబర్ 2005",
+      "en": "December 2005"
+    },
+    "pdf": "issues/2005/12.pdf",
+    "cover": "covers/2005/12.jpg",
+    "pageCount": 25
   }
 ]

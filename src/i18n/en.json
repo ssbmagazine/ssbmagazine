@@ -36,6 +36,7 @@
   "reader": {
     "close": "Back to archive",
     "page": "Page {0} of {1}",
+    "pageThumb": "Page {0}",
     "zoomOut": "Smaller",
     "zoomIn": "Larger",
     "fit": "Fit width",
@@ -48,11 +49,22 @@
   },
   "about": {
     "title": "About us",
-    "lede": "Names for the editorial, design, and writing teams will sit here once they are decided.",
-    "editorial": "Editorial",
-    "design": "Design",
-    "content": "Writing",
-    "placeholder": "Names still to be confirmed."
+    "lede": "The people who write, publish, and print Sathya Sai Balavikas.",
+    "editorial": "Editorial team",
+    "publishing": "Publishing team",
+    "printing": "Printing",
+    "moreSoon": "More names to be added.",
+    "editorialMembers": [
+      "డా।। ఎమ్. లావణ్య సరస్వతి",
+      "శ్రీమతి యు. మాధురి",
+      "శ్రీమతి ఎస్. సుప్రజ"
+    ],
+    "publishingMembers": [
+      "శ్రీ టి. ఎస్. ఎన్. రావు",
+      "శ్రీమతి గంగ పిడతల — National Education Coordinator"
+    ],
+    "printingName": "Sree Vani Offset Printers",
+    "printingNameTe": "శ్రీ వాణి ఆఫ్సెట్ ప్రింటర్స్"
   },
   "subscribe": {
     "title": "Subscribe",
@@ -71,6 +83,8 @@
   },
   "footer": {
     "blurb": "Sathya Sai Balavikas, a Telugu monthly magazine.",
+    "posted": "The magazine is posted on the 12th of every month.",
+    "email": "Email us at",
     "socials": "Social",
     "banners": "Promotional banners will be available to download here later.",
     "copy": "© {0} Sathya Sai Balavikas"
