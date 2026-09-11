@@ -162,27 +162,37 @@ export function ReaderPage() {
   return (
     <div className="reader">
       <div className="reader-bar">
-        <Link className="btn" to={`/archive#year-${issue.year}`}>
-          {t.reader.close}
+        <Link className="btn reader-back" to={`/archive#year-${issue.year}`} aria-label={t.reader.close}>
+          <span className="reader-back-full">{t.reader.close}</span>
+          <span className="reader-back-short" aria-hidden="true">
+            ← {t.reader.closeShort}
+          </span>
         </Link>
         <div className="reader-title">
           <strong>{issueTitle(issue, lang)}</strong>
-          <span>
+          <span className="reader-page-full">
             {pageCount ? fmt(t.reader.page, currentPage, pageCount) : t.reader.loading}
+          </span>
+          <span className="reader-page-short">
+            {pageCount ? fmt(t.reader.pageShort, currentPage, pageCount) : "…"}
           </span>
         </div>
         <div className="reader-actions">
-          <button type="button" className="icon-btn" onClick={() => setZoom((z) => Math.max(0.7, z - 0.15))}>
-            {t.reader.zoomOut}
+          <button type="button" className="icon-btn" aria-label={t.reader.zoomOut} onClick={() => setZoom((z) => Math.max(0.7, z - 0.15))}>
+            <span className="label-full">{t.reader.zoomOut}</span>
+            <span className="label-short" aria-hidden="true">−</span>
           </button>
-          <button type="button" className="icon-btn" onClick={() => setZoom(1)}>
-            {t.reader.fit}
+          <button type="button" className="icon-btn" aria-label={t.reader.fit} onClick={() => setZoom(1)}>
+            <span className="label-full">{t.reader.fit}</span>
+            <span className="label-short" aria-hidden="true">⟷</span>
           </button>
-          <button type="button" className="icon-btn" onClick={() => setZoom((z) => Math.min(2.2, z + 0.15))}>
-            {t.reader.zoomIn}
+          <button type="button" className="icon-btn" aria-label={t.reader.zoomIn} onClick={() => setZoom((z) => Math.min(2.2, z + 0.15))}>
+            <span className="label-full">{t.reader.zoomIn}</span>
+            <span className="label-short" aria-hidden="true">+</span>
           </button>
-          <a className="icon-btn" href={assetUrl(issue.pdf)} download>
-            {t.reader.download}
+          <a className="icon-btn" href={assetUrl(issue.pdf)} download aria-label={t.reader.download}>
+            <span className="label-full">{t.reader.download}</span>
+            <span className="label-short" aria-hidden="true">↓</span>
           </a>
           <button type="button" className="icon-btn" onClick={() => setLang(lang === "te" ? "en" : "te")}>
             {lang === "te" ? "EN" : "తె"}

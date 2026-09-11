@@ -8,7 +8,8 @@
     "archive": "Archive",
     "about": "About",
     "subscribe": "Subscribe",
-    "search": "Search"
+    "search": "Search",
+    "resources": "Resources"
   },
   "theme": {
     "light": "Light",
@@ -35,7 +36,9 @@
   },
   "reader": {
     "close": "Back to archive",
+    "closeShort": "Archive",
     "page": "Page {0} of {1}",
+    "pageShort": "{0}/{1}",
     "pageThumb": "Page {0}",
     "zoomOut": "Smaller",
     "zoomIn": "Larger",
@@ -54,17 +57,7 @@
     "publishing": "Publishing team",
     "printing": "Printing",
     "moreSoon": "More names to be added.",
-    "editorialMembers": [
-      "డా।। ఎమ్. లావణ్య సరస్వతి",
-      "శ్రీమతి యు. మాధురి",
-      "శ్రీమతి ఎస్. సుప్రజ"
-    ],
-    "publishingMembers": [
-      "శ్రీ టి. ఎస్. ఎన్. రావు",
-      "శ్రీమతి గంగ పిడతల — National Education Coordinator"
-    ],
-    "printingName": "Sree Vani Offset Printers",
-    "printingNameTe": "శ్రీ వాణి ఆఫ్సెట్ ప్రింటర్స్"
+    "bioSoon": "A short bio will appear here."
   },
   "subscribe": {
     "title": "Subscribe",
@@ -81,12 +74,15 @@
     "lede": "Article search is being built separately. It will live on this page when it is ready.",
     "note": "Older issues are PDFs for now. Search will work better once Telugu articles can sit in the page itself."
   },
+  "resources": {
+    "title": "Resources",
+    "lede": "Promotional banners and other materials for sharing the magazine will live here.",
+    "note": "Downloads will be added on this page once the files are ready."
+  },
   "footer": {
     "blurb": "Sathya Sai Balavikas, a Telugu monthly magazine.",
     "posted": "The magazine is posted on the 12th of every month.",
     "email": "Email us at",
-    "socials": "Social",
-    "banners": "Promotional banners will be available to download here later.",
     "copy": "© {0} Sathya Sai Balavikas"
   }
 }

@@ -21,8 +21,6 @@ export function Footer() {
             </span>
           ))}
         </span>
-        <span>{t.footer.socials}: Instagram · YouTube · Facebook</span>
-        <span>{t.footer.banners}</span>
         <span>{fmt(t.footer.copy, new Date().getFullYear())}</span>
       </div>
     </footer>
