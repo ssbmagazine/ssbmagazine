@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import type { PDFDocumentProxy } from "pdfjs-dist";
-import { CoverCard } from "../components/CoverCard";
+import { IconMoon, IconSun } from "../components/Icons";
+import { PageThumb } from "../components/PageThumb";
 import { PdfPage } from "../components/PdfPage";
 import { useI18n } from "../i18n/context";
 import { useTheme } from "../theme/context";
@@ -10,7 +11,6 @@ import {
   findIssue,
   issueNeighbors,
   issuePath,
-  issuesForYear,
   issueTitle,
   lastPageKey,
 } from "../lib/issues";
@@ -29,9 +29,9 @@ export function ReaderPage() {
   const [zoom, setZoom] = useState(1);
   const [width, setWidth] = useState(0);
   const pagesRef = useRef<HTMLDivElement>(null);
+  const hopperRailRef = useRef<HTMLDivElement>(null);
 
   const neighbors = issue ? issueNeighbors(issue) : { prev: null, next: null };
-  const yearIssues = issue ? issuesForYear(issue.year) : [];
   const pages = useMemo(() => Array.from({ length: pageCount }, (_, i) => i + 1), [pageCount]);
 
   useEffect(() => {
@@ -128,11 +128,9 @@ export function ReaderPage() {
   }, [currentPage, navigate, neighbors.next, neighbors.prev, pageCount]);
 
   useEffect(() => {
-    document.querySelector(".hopper-cover.active")?.scrollIntoView({
-      inline: "center",
-      block: "nearest",
-    });
-  }, [issue]);
+    const active = hopperRailRef.current?.querySelector(".page-thumb.active");
+    active?.scrollIntoView({ inline: "center", block: "nearest" });
+  }, [currentPage, pdf]);
 
   useEffect(() => {
     if (!pdf || currentPage <= 1) return;
@@ -164,39 +162,49 @@ export function ReaderPage() {
   return (
     <div className="reader">
       <div className="reader-bar">
-        <Link className="btn" to={`/archive#year-${issue.year}`}>
-          {t.reader.close}
+        <Link className="btn reader-back" to={`/archive#year-${issue.year}`} aria-label={t.reader.close}>
+          <span className="reader-back-full">{t.reader.close}</span>
+          <span className="reader-back-short" aria-hidden="true">
+            ← {t.reader.closeShort}
+          </span>
         </Link>
         <div className="reader-title">
           <strong>{issueTitle(issue, lang)}</strong>
-          <span>
+          <span className="reader-page-full">
             {pageCount ? fmt(t.reader.page, currentPage, pageCount) : t.reader.loading}
+          </span>
+          <span className="reader-page-short">
+            {pageCount ? fmt(t.reader.pageShort, currentPage, pageCount) : "…"}
           </span>
         </div>
         <div className="reader-actions">
-          <button type="button" className="icon-btn" onClick={() => setZoom((z) => Math.max(0.7, z - 0.15))}>
-            {t.reader.zoomOut}
+          <button type="button" className="icon-btn" aria-label={t.reader.zoomOut} onClick={() => setZoom((z) => Math.max(0.7, z - 0.15))}>
+            <span className="label-full">{t.reader.zoomOut}</span>
+            <span className="label-short" aria-hidden="true">−</span>
           </button>
-          <button type="button" className="icon-btn" onClick={() => setZoom(1)}>
-            {t.reader.fit}
+          <button type="button" className="icon-btn" aria-label={t.reader.fit} onClick={() => setZoom(1)}>
+            <span className="label-full">{t.reader.fit}</span>
+            <span className="label-short" aria-hidden="true">⟷</span>
           </button>
-          <button type="button" className="icon-btn" onClick={() => setZoom((z) => Math.min(2.2, z + 0.15))}>
-            {t.reader.zoomIn}
+          <button type="button" className="icon-btn" aria-label={t.reader.zoomIn} onClick={() => setZoom((z) => Math.min(2.2, z + 0.15))}>
+            <span className="label-full">{t.reader.zoomIn}</span>
+            <span className="label-short" aria-hidden="true">+</span>
           </button>
-          <a className="icon-btn" href={assetUrl(issue.pdf)} download>
-            {t.reader.download}
+          <a className="icon-btn" href={assetUrl(issue.pdf)} download aria-label={t.reader.download}>
+            <span className="label-full">{t.reader.download}</span>
+            <span className="label-short" aria-hidden="true">↓</span>
           </a>
           <button type="button" className="icon-btn" onClick={() => setLang(lang === "te" ? "en" : "te")}>
             {lang === "te" ? "EN" : "తె"}
           </button>
           <button
             type="button"
-            className="icon-btn"
+            className="icon-btn theme-toggle"
             onClick={toggleTheme}
             aria-pressed={theme === "dark"}
             aria-label={theme === "dark" ? t.theme.light : t.theme.dark}
           >
-            {theme === "dark" ? "Aa" : "A"}
+            {theme === "dark" ? <IconSun /> : <IconMoon />}
           </button>
         </div>
       </div>
@@ -237,16 +245,20 @@ export function ReaderPage() {
             <span />
           )}
         </div>
-        <div className="hopper-rail">
-          {yearIssues.map((item) => (
-            <CoverCard
-              key={item.id}
-              issue={item}
-              compact
-              className={`hopper-cover${item.id === issue.id ? " active" : ""}`}
-            />
-          ))}
-        </div>
+        {pdf ? (
+          <div className="hopper-rail" ref={hopperRailRef}>
+            {pages.map((pageNumber) => (
+              <PageThumb
+                key={`${issue.id}-thumb-${pageNumber}`}
+                pdf={pdf}
+                pageNumber={pageNumber}
+                active={pageNumber === currentPage}
+                onSelect={scrollToPage}
+                label={fmt(t.reader.pageThumb, pageNumber)}
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { I18nProvider } from "./i18n/context";
 import { AboutPage } from "./pages/AboutPage";
 import { ArchivePage } from "./pages/ArchivePage";
 import { HomePage } from "./pages/HomePage";
+import { ResourcesPage } from "./pages/ResourcesPage";
 import { SearchPage } from "./pages/SearchPage";
 import { SubscribePage } from "./pages/SubscribePage";
 import { ThemeProvider } from "./theme/context";
@@ -25,6 +26,7 @@ export function App() {
                 <Route path="/archive" element={<ArchivePage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/subscribe" element={<SubscribePage />} />
+                <Route path="/resources" element={<ResourcesPage />} />
                 <Route path="/search" element={<SearchPage />} />
               </Route>
               <Route path="/archive/:year/:slug" element={<ReaderPage />} />

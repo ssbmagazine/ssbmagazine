@@ -2,12 +2,14 @@ import { NavLink } from "react-router-dom";
 import { useI18n } from "../i18n/context";
 import { useTheme } from "../theme/context";
 import { assetUrl } from "../lib/issues";
+import { IconMoon, IconSun } from "./Icons";
 
 const links = [
   { to: "/", key: "home" as const },
   { to: "/archive", key: "archive" as const },
   { to: "/about", key: "about" as const },
   { to: "/subscribe", key: "subscribe" as const },
+  { to: "/resources", key: "resources" as const },
   { to: "/search", key: "search" as const },
 ];
 
@@ -18,7 +20,7 @@ export function Header() {
   return (
     <header className="masthead">
       <div className="brand-row">
-        <img className="brand-logo" src={assetUrl("brand/logo.png")} alt="" />
+        <img className="brand-logo circle" src={assetUrl("brand/logo.png")} alt="" />
         <div className="brand-titles">
           <h1>{t.siteTitle}</h1>
           <p>{t.siteSubtitle}</p>
@@ -49,12 +51,12 @@ export function Header() {
           </button>
           <button
             type="button"
-            className="toggle"
+            className="toggle theme-toggle"
             aria-pressed={theme === "dark"}
             aria-label={theme === "dark" ? t.theme.light : t.theme.dark}
             onClick={toggleTheme}
           >
-            {theme === "dark" ? "Aa" : "A"}
+            {theme === "dark" ? <IconSun /> : <IconMoon />}
           </button>
         </div>
       </div>
