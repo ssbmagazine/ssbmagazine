@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CoverCard } from "../components/CoverCard";
 import { useI18n } from "../i18n/context";
-import { issuePath, issueTitle, latestIssue } from "../lib/issues";
+import { assetUrl, issuePath, issueTitle, latestIssue } from "../lib/issues";
 
 export function HomePage() {
   const { lang, t } = useI18n();
@@ -14,7 +14,11 @@ export function HomePage() {
       <p className="lede">{t.home.intro}</p>
 
       <figure className="hero-slot">
-        <p>{t.home.heroCaption}</p>
+        <img
+          src={assetUrl("brand/hero-baba-children.png")}
+          alt={t.home.heroAlt}
+        />
+        <figcaption>{t.home.heroCaption}</figcaption>
       </figure>
 
       {latest ? (
