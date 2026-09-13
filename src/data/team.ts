@@ -179,6 +179,9 @@ export const subscription = {
   /** WhatsApp only — no other phone numbers on the site. */
   whatsapp: "918919447683",
   whatsappDisplay: "+91 89194 47683",
+  /** Preferred UPI handle for Scan & pay / app pay. */
+  upiId: "30021971566@sbi",
+  upiPayeeName: "Sathya Sai Balavikas",
   address: {
     te: "బేగంపేట, హైదరాబాద్ 500 016",
     en: "Begumpet, Hyderabad 500 016",
@@ -261,25 +264,25 @@ export const subscription = {
     micr: "50002046",
   },
   whatsappMessage: {
-    te: `నమస్కారం,
+    te: `సాయిరామ్ 🙏
 
-నేను సత్యసాయి బాలవికాస్ చందా కోసం చెల్లించాను. చెల్లింపు స్క్రీన్‌షాట్ కింద జత చేస్తున్నాను.
+నేను సత్యసాయి బాలవికాస్ చందా కోసం చెల్లించాను. చెల్లింపు స్క్రీన్‌షాట్ కింద జత చేస్తున్నాను 📎
 
-పేరు:
+పేరు: 
 చిరునామా:
 ఫోన్:
-చందా రకం: కొత్త / పునరుద్ధరణ
-చెల్లింపు పద్ధతి: UPI / NEFT / DD / చెక్ / మనీ ఆర్డర్
+చందా రకం (కొత్త / పునరుద్ధరణ): 
+చెల్లింపు పద్ధతి (UPI / NEFT / DD / చెక్ / మనీ ఆర్డర్)
 `,
-    en: `Namaste,
+    en: `Sairam 🙏
 
-I have paid for a Sathya Sai Balavikas subscription. Payment screenshot is attached below.
+I have paid for a Sathya Sai Balavikas subscription. Payment screenshot is attached below 📎
 
-Name:
+Name: 
 Address:
 Phone:
-Subscription type: New / Renewal
-Payment method: UPI / NEFT / DD / Cheque / Money order
+Subscription type (New / Renewal): 
+Payment method (UPI / NEFT / DD / Cheque / Money order)
 `,
   },
 } as const;
@@ -287,6 +290,13 @@ Payment method: UPI / NEFT / DD / Cheque / Money order
 export function subscriptionWhatsAppUrl(lang: Lang) {
   const text = encodeURIComponent(subscription.whatsappMessage[lang]);
   return `https://wa.me/${subscription.whatsapp}?text=${text}`;
+}
+
+/** Opens the phone’s UPI app (Google Pay / PhonePe / etc.) when supported. */
+export function subscriptionUpiPayUrl() {
+  const pa = encodeURIComponent(subscription.upiId);
+  const pn = encodeURIComponent(subscription.upiPayeeName);
+  return `upi://pay?pa=${pa}&pn=${pn}&cu=INR`;
 }
 
 export function personName(person: Person, lang: Lang) {
