@@ -1,5 +1,5 @@
 import { useI18n } from "../i18n/context";
-import { magazineEmails } from "../data/team";
+import { magazineEmails, registration } from "../data/team";
 
 export function Footer() {
   const { t, fmt } = useI18n();
@@ -20,7 +20,10 @@ export function Footer() {
             </span>
           ))}
         </span>
-        <span>{fmt(t.footer.copy, new Date().getFullYear())}</span>
+        <span>
+          {fmt(t.footer.copy, new Date().getFullYear())} · {t.footer.reg}{" "}
+          {registration.number}
+        </span>
       </div>
     </footer>
   );

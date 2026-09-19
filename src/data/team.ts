@@ -167,6 +167,24 @@ export const magazineEmails = [
   "sathyasaibalavikas@yahoo.co.in",
 ] as const;
 
+/** Press Registrar General of India certificate. */
+export const registration = {
+  number: "APTEL/2002/08813",
+  registeredOn: {
+    te: "17 జనవరి 2003",
+    en: "17 January 2003",
+  },
+  owner: {
+    te: "శ్రీ సత్యసాయి సేవా సంస్థ, హైదరాబాద్ — మహిళా విభాగం",
+    en: "Mahila Vibhag of Sri Sathya Sai Seva Organisation of Hyderabad",
+  },
+  place: {
+    te: "తెలంగాణ — హైదరాబాద్",
+    en: "Telangana — Hyderabad",
+  },
+  certificate: "brand/prgi-certificate.png",
+} as const;
+
 export const subscription = {
   contactName: {
     te: "శ్రీమతి యు. మాధురి",
@@ -264,9 +282,9 @@ export const subscription = {
     micr: "50002046",
   },
   whatsappMessage: {
-    te: `సాయిరామ్ 🙏
+    te: `సాయిరామ్
 
-నేను సత్యసాయి బాలవికాస్ చందా కోసం చెల్లించాను. చెల్లింపు స్క్రీన్‌షాట్ కింద జత చేస్తున్నాను 📎
+నేను సత్యసాయి బాలవికాస్ చందా కోసం చెల్లించాను. చెల్లింపు స్క్రీన్‌షాట్ కింద జత చేస్తున్నాను
 
 పేరు: 
 చిరునామా:
@@ -274,9 +292,9 @@ export const subscription = {
 చందా రకం (కొత్త / పునరుద్ధరణ): 
 చెల్లింపు పద్ధతి (UPI / NEFT / DD / చెక్ / మనీ ఆర్డర్)
 `,
-    en: `Sairam 🙏
+    en: `Sairam
 
-I have paid for a Sathya Sai Balavikas subscription. Payment screenshot is attached below 📎
+I have paid for a Sathya Sai Balavikas subscription. Payment screenshot is attached below
 
 Name: 
 Address:

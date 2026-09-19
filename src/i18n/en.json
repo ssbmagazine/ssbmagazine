@@ -60,7 +60,16 @@
     "convenorsNote": "Education wing of Sri Sathya Sai Seva Organisations — Sri Sathya Sai Balvikas.",
     "printing": "Printing",
     "contact": "Write to us",
-    "bioSoon": "A short bio will appear here."
+    "bioSoon": "A short bio will appear here.",
+    "registration": "Press registration",
+    "regNumber": "PRGI number",
+    "regOwner": "Owner",
+    "regPlace": "Place of publication",
+    "regDate": "Registered on",
+    "viewCertificate": "View certificate",
+    "closeCertificate": "Close",
+    "certificateTitle": "PRGI registration certificate",
+    "certificateAlt": "Press Registrar General of India certificate for Sathya Sai Balavikas"
   },
   "subscribe": {
     "title": "Subscribe",
@@ -104,6 +113,7 @@
     "blurb": "Sathya Sai Balavikas Telugu monthly magazine.",
     "posted": "The magazine is posted on the 12th of every month.",
     "email": "Email us at",
-    "copy": "© {0} Sathya Sai Balavikas"
+    "copy": "© {0} Sathya Sai Balavikas",
+    "reg": "PRGI"
   }
 }
