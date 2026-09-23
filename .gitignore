@@ -10,6 +10,10 @@
 /dist
 /build
 
+# MLS ingest scratch (compare duplicates locally; do not publish)
+/_mls_extract
+/_mls_duplicates
+
 # misc
 .DS_Store
 .env.local

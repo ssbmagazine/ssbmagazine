@@ -6,12 +6,16 @@ type Props = {
   pageNumber: number;
   width: number;
   zoom: number;
+  /** height / width — keeps unrendered pages from collapsing (breaks jump-to-page). */
+  aspectRatio: number;
 };
 
-export function PdfPage({ pdf, pageNumber, width, zoom }: Props) {
+export function PdfPage({ pdf, pageNumber, width, zoom, aspectRatio }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(pageNumber <= 2);
+  const reservedHeight =
+    width > 40 && aspectRatio > 0 ? Math.floor(width * zoom * aspectRatio) : undefined;
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -65,7 +69,12 @@ export function PdfPage({ pdf, pageNumber, width, zoom }: Props) {
   }, [pdf, pageNumber, width, zoom, visible]);
 
   return (
-    <div className="pdf-page" ref={wrapRef} data-page={pageNumber}>
+    <div
+      className="pdf-page"
+      ref={wrapRef}
+      data-page={pageNumber}
+      style={reservedHeight ? { minHeight: reservedHeight } : undefined}
+    >
       <canvas ref={canvasRef} />
     </div>
   );

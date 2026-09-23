@@ -131,6 +131,12 @@ h3 {
   border: 1px solid var(--rule);
 }
 
+.jubilee-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
 .brand-titles {
   text-align: center;
   min-width: 0;
@@ -155,11 +161,25 @@ h3 {
   align-items: center;
   gap: 0.5rem;
   justify-content: space-between;
+  position: relative;
+}
+
+.nav-menu-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+  color: var(--ink);
+  min-height: 2.15rem;
+  padding: 0 0.7rem;
+  cursor: pointer;
+  font: inherit;
 }
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.15rem 0.1rem;
   min-width: 0;
 }
@@ -169,12 +189,53 @@ h3 {
   padding: 0.35rem 0.7rem;
   color: var(--ink-muted);
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--ink);
   border-bottom-color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .nav-menu-btn {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% - 0.15rem);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0.35rem 0;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    box-shadow: 0 10px 28px rgb(0 0 0 / 12%);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-links a.active {
+    border-bottom-color: var(--rule);
+    color: var(--accent);
+  }
 }
 
 .toggles {
@@ -227,6 +288,112 @@ h3 {
   margin: 0 0 1.75rem;
 }
 
+.home-hero {
+  position: relative;
+  margin: 0 0 2rem;
+  overflow: hidden;
+  background: #f4f1ea;
+  min-height: min(52vw, 420px);
+}
+
+.home-hero-image {
+  display: block;
+  width: 100%;
+  height: min(52vw, 420px);
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+.home-hero-copy {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.2rem 1.2rem 1.3rem;
+  background: linear-gradient(to top, rgb(255 255 255 / 92%) 35%, rgb(255 255 255 / 55%) 70%, transparent);
+  color: var(--ink);
+}
+
+.home-hero-copy .page-kicker {
+  margin-bottom: 0.35rem;
+}
+
+.home-hero-copy .page-title {
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.55rem, 4.2vw, 2.4rem);
+}
+
+.home-hero-copy .lede {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .home-hero-copy {
+  background: linear-gradient(to top, rgb(20 16 12 / 88%) 40%, rgb(20 16 12 / 45%) 75%, transparent);
+}
+
+:root[data-theme="dark"] .home-hero-copy .lede {
+  color: var(--ink);
+}
+
+.cover-slideshow {
+  margin: 0 0 2.25rem;
+  display: grid;
+  justify-items: center;
+  gap: 0.65rem;
+}
+
+.cover-slideshow-frame {
+  position: relative;
+  width: min(280px, 70vw);
+  aspect-ratio: 3 / 4;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.cover-slideshow-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+.cover-slideshow-frame img.is-active {
+  opacity: 1;
+}
+
+.cover-slideshow-caption {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.cover-slideshow-dots {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cover-slideshow-dots button {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cover-slideshow-dots button.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 .hero-slot {
   margin: 0 0 2rem;
   border: 0;
@@ -255,11 +422,14 @@ h3 {
 }
 
 @media (max-width: 640px) {
-  .hero-slot img {
-    aspect-ratio: 16 / 10;
-    max-height: none;
-    min-height: 180px;
-    object-position: 12% 35%;
+  .home-hero,
+  .home-hero-image {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .home-hero-copy {
+    padding: 1.6rem 0.85rem 1rem;
   }
 }
 
@@ -506,11 +676,58 @@ h3 {
 }
 
 .about-registration {
-  margin: 1rem 0 1.5rem;
+  margin: 1.25rem 0 1rem;
+  max-width: 36rem;
 }
 
 .about-registration .cta-row {
-  margin-top: 1rem;
+  margin-top: 0.85rem;
+}
+
+.about-registration-line {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.about-registration-line code {
+  font-family: var(--font-ui);
+  font-size: 0.9em;
+}
+
+.text-btn {
+  border: 0;
+  background: none;
+  color: var(--accent);
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.resources-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 840px) {
+  .resources-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.resource-preview {
+  display: block;
+  margin: 0.75rem 0 0;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.resource-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .cert-dialog {
@@ -724,7 +941,6 @@ h3 {
 }
 
 .data-table .amount-cell {
-  white-space: nowrap;
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
@@ -828,15 +1044,51 @@ h3 {
 
 .site-footer {
   border-top: 1px solid var(--rule);
-  padding: 1.4rem 0 1.8rem;
+  padding: 0 0 1.5rem;
+}
+
+.footer-banner {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+  background-size: cover;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  border: 1px solid var(--rule);
+  /* Banner is bright; keep footer copy readable on the lighter upper zone */
+  padding: 1.15rem 1rem 1.25rem;
+  position: relative;
+}
+
+.footer-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 78%) 0%,
+    rgb(255 255 255 / 62%) 55%,
+    rgb(255 255 255 / 45%) 100%
+  );
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] .footer-banner::before {
+  background: linear-gradient(
+    to bottom,
+    rgb(20 16 12 / 78%) 0%,
+    rgb(20 16 12 / 62%) 55%,
+    rgb(20 16 12 / 48%) 100%
+  );
 }
 
 .footer-inner {
-  width: min(1120px, calc(100% - 2rem));
+  position: relative;
+  z-index: 1;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   gap: 0.45rem;
-  color: var(--ink-muted);
+  color: var(--ink);
   font-size: 0.92rem;
   justify-items: center;
   text-align: center;
@@ -904,6 +1156,18 @@ h3 {
   align-items: center;
   padding: 0.45rem 0.7rem;
   border-bottom: 1px solid var(--rule);
+}
+
+.reader-exit {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.reader-home,
+.reader-back {
+  text-decoration: none;
 }
 
 .reader-title {
@@ -1058,14 +1322,10 @@ h3 {
     grid-template-columns: 48px 1fr 48px;
   }
 
-  .brand-logo {
+  .brand-logo,
+  .jubilee-logo {
     width: 48px;
     height: 48px;
-  }
-
-  .toolbar {
-    align-items: flex-start;
-    flex-direction: column;
   }
 
   .reader-bar {
@@ -1077,8 +1337,16 @@ h3 {
     padding: 0.4rem 0.55rem;
   }
 
-  .reader-back {
+  .reader-exit {
     grid-area: back;
+  }
+
+  .reader-home {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  .reader-back {
     padding: 0.3rem 0.5rem;
     font-size: 0.82rem;
   }

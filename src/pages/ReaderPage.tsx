@@ -28,17 +28,26 @@ export function ReaderPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [zoom, setZoom] = useState(1);
   const [width, setWidth] = useState(0);
+  const [aspectRatio, setAspectRatio] = useState(1.4);
   const pagesRef = useRef<HTMLDivElement>(null);
   const hopperRailRef = useRef<HTMLDivElement>(null);
+  const jumpTargetRef = useRef<number | null>(null);
+  const currentPageRef = useRef(1);
 
   const neighbors = issue ? issueNeighbors(issue) : { prev: null, next: null };
   const pages = useMemo(() => Array.from({ length: pageCount }, (_, i) => i + 1), [pageCount]);
+
+  useEffect(() => {
+    currentPageRef.current = currentPage;
+  }, [currentPage]);
 
   useEffect(() => {
     setPdf(null);
     setError(false);
     setCurrentPage(1);
     setZoom(1);
+    setAspectRatio(1.4);
+    jumpTargetRef.current = null;
     if (!issue) return;
 
     let cancelled = false;
@@ -47,10 +56,19 @@ export function ReaderPage() {
       isEvalSupported: true,
     });
     task.promise
-      .then((doc) => {
+      .then(async (doc) => {
         if (cancelled) {
           void doc.destroy();
           return;
+        }
+        try {
+          const first = await doc.getPage(1);
+          if (!cancelled) {
+            const viewport = first.getViewport({ scale: 1 });
+            setAspectRatio(viewport.height / viewport.width);
+          }
+        } catch {
+          /* keep default aspect */
         }
         setPdf(doc);
         setPageCount(doc.numPages);
@@ -101,22 +119,27 @@ export function ReaderPage() {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         const page = Number((visible?.target as HTMLElement | undefined)?.dataset.page);
-        if (page) setCurrentPage(page);
+        if (!page) return;
+        if (jumpTargetRef.current !== null) {
+          if (page === jumpTargetRef.current) jumpTargetRef.current = null;
+          else return;
+        }
+        setCurrentPage(page);
       },
       { root: null, threshold: [0.35, 0.55, 0.75] },
     );
     node.querySelectorAll("[data-page]").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [pdf, pageCount, width]);
+  }, [pdf, pageCount, width, aspectRatio]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        scrollToPage(Math.min(pageCount, currentPage + 1));
+        scrollToPage(Math.min(pageCount, currentPageRef.current + 1));
       } else if (event.key === "ArrowLeft") {
         event.preventDefault();
-        scrollToPage(Math.max(1, currentPage - 1));
+        scrollToPage(Math.max(1, currentPageRef.current - 1));
       } else if (event.key === "]" && neighbors.next) {
         navigate(issuePath(neighbors.next));
       } else if (event.key === "[" && neighbors.prev) {
@@ -125,7 +148,7 @@ export function ReaderPage() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [currentPage, navigate, neighbors.next, neighbors.prev, pageCount]);
+  }, [navigate, neighbors.next, neighbors.prev, pageCount]);
 
   useEffect(() => {
     const active = hopperRailRef.current?.querySelector(".page-thumb.active");
@@ -138,12 +161,24 @@ export function ReaderPage() {
     return () => cancelAnimationFrame(id);
   }, [pdf]);
 
-  function scrollToPage(page: number, behavior: ScrollBehavior = "smooth") {
+  function scrollToPage(page: number, behavior?: ScrollBehavior) {
     if (pageCount < 1) return;
     const clamped = Math.min(Math.max(1, page), pageCount);
-    const target = pagesRef.current?.querySelector(`[data-page="${clamped}"]`);
-    target?.scrollIntoView({ behavior, block: "start" });
+    const distance = Math.abs(clamped - currentPageRef.current);
+    const resolved = behavior ?? (distance > 1 ? "auto" : "smooth");
+    jumpTargetRef.current = clamped;
     setCurrentPage(clamped);
+    const target = pagesRef.current?.querySelector(`[data-page="${clamped}"]`);
+    target?.scrollIntoView({ behavior: resolved, block: "start" });
+    if (resolved === "auto") {
+      requestAnimationFrame(() => {
+        if (jumpTargetRef.current === clamped) jumpTargetRef.current = null;
+      });
+    } else {
+      window.setTimeout(() => {
+        if (jumpTargetRef.current === clamped) jumpTargetRef.current = null;
+      }, 500);
+    }
   }
 
   if (!issue) {
@@ -152,7 +187,7 @@ export function ReaderPage() {
         <p className="reader-status">{t.reader.missing}</p>
         <p className="reader-status">
           <Link className="inline-link" to="/archive">
-            {t.reader.close}
+            {t.reader.backArchive}
           </Link>
         </p>
       </div>
@@ -162,12 +197,21 @@ export function ReaderPage() {
   return (
     <div className="reader">
       <div className="reader-bar">
-        <Link className="btn reader-back" to={`/archive#year-${issue.year}`} aria-label={t.reader.close}>
-          <span className="reader-back-full">{t.reader.close}</span>
-          <span className="reader-back-short" aria-hidden="true">
-            ← {t.reader.closeShort}
-          </span>
-        </Link>
+        <div className="reader-exit">
+          <Link className="btn reader-home" to="/" aria-label={t.reader.backHome}>
+            {t.reader.backHomeShort}
+          </Link>
+          <Link
+            className="btn solid reader-back"
+            to={`/archive#year-${issue.year}`}
+            aria-label={t.reader.backArchive}
+          >
+            <span className="reader-back-full">{t.reader.backArchive}</span>
+            <span className="reader-back-short" aria-hidden="true">
+              ← {t.reader.backArchiveShort}
+            </span>
+          </Link>
+        </div>
         <div className="reader-title">
           <strong>{issueTitle(issue, lang)}</strong>
           <span className="reader-page-full">
@@ -221,6 +265,7 @@ export function ReaderPage() {
               pageNumber={pageNumber}
               width={width}
               zoom={zoom}
+              aspectRatio={aspectRatio}
             />
           ))}
         </div>
