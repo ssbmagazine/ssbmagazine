@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CoverCard } from "../components/CoverCard";
+import { CoverSlideshow } from "../components/CoverSlideshow";
 import { useI18n } from "../i18n/context";
 import { assetUrl, issuePath, issueTitle, latestIssue } from "../lib/issues";
 
@@ -8,18 +9,21 @@ export function HomePage() {
   const latest = latestIssue();
 
   return (
-    <article>
-      <p className="page-kicker">{t.home.kicker}</p>
-      <h2 className="page-title">{t.siteTitle}</h2>
-      <p className="lede">{t.home.intro}</p>
-
-      <figure className="hero-slot">
+    <article className="home-page">
+      <section className="home-hero">
         <img
-          src={assetUrl("brand/hero-baba-children.png")}
+          className="home-hero-image"
+          src={assetUrl("brand/hero-swami-book.jpg")}
           alt={t.home.heroAlt}
         />
-        <figcaption>{t.home.heroCaption}</figcaption>
-      </figure>
+        <div className="home-hero-copy">
+          <p className="page-kicker">{t.home.kicker}</p>
+          <h2 className="page-title">{t.siteTitle}</h2>
+          <p className="lede">{t.home.intro}</p>
+        </div>
+      </section>
+
+      <CoverSlideshow />
 
       {latest ? (
         <section className="latest-block">

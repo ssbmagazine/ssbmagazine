@@ -66,15 +66,19 @@ export const teamSections: TeamSection[] = [
     id: "publishing",
     people: [
       {
-        id: "tsn-rao",
+        id: "phani-prasad",
         name: {
-          te: "శ్రీ టి. ఎస్. ఎన్. రావు",
-          en: "Sri T. S. N. Rao",
+          te: "శ్రీ ఫణి ప్రసాద్ కె. కె. ఎన్.",
+          en: "Sri Phani Prasad K. K. N.",
         },
         role: {
           te: "ప్రచురణకర్త & కరస్పాండెంట్",
           en: "Publisher & Correspondent",
-        }
+        },
+        detail: {
+          te: "జిల్లా విద్యా సమన్వయకర్త — హైదరాబాద్",
+          en: "District Education Coordinator — Hyderabad",
+        },
       },
     ],
   },
@@ -113,7 +117,6 @@ export const teamSections: TeamSection[] = [
           te: "రాష్ట్ర సమన్వయకర్త, విద్యా విభాగం — తెలంగాణ",
           en: "State Coordinator, Education Wing — Telangana",
         },
-
       },
       {
         id: "madhavi",
@@ -167,21 +170,16 @@ export const magazineEmails = [
   "sathyasaibalavikas@yahoo.co.in",
 ] as const;
 
+export const contactAddress = {
+  te: "ఫ్లాట్ #301, శ్రీ సాయి రెసిడెన్సీ, ప్లాట్ నం. 78, 79, భాస్కర్ రావు నగర్ ఫేజ్-III, సైనిక్‌పురి, సికింద్రాబాద్ 500094, తెలంగాణ, భారతదేశం.",
+  en: "Flat #301, Sri Sai Residency, Plot No. 78, 79, Bhaskar Rao Nagar Phase-III, Sainikpuri, Secunderabad 500094, Telangana, India.",
+} as const;
+
 /** Press Registrar General of India certificate. */
 export const registration = {
   number: "APTEL/2002/08813",
-  registeredOn: {
-    te: "17 జనవరి 2003",
-    en: "17 January 2003",
-  },
-  owner: {
-    te: "శ్రీ సత్యసాయి సేవా సంస్థ, హైదరాబాద్ — మహిళా విభాగం",
-    en: "Mahila Vibhag of Sri Sathya Sai Seva Organisation of Hyderabad",
-  },
-  place: {
-    te: "తెలంగాణ — హైదరాబాద్",
-    en: "Telangana — Hyderabad",
-  },
+  year: "2003",
+  postal: "MPM/L22/SSBV/15-17",
   certificate: "brand/prgi-certificate.png",
 } as const;
 
@@ -200,10 +198,7 @@ export const subscription = {
   /** Preferred UPI handle for Scan & pay / app pay. */
   upiId: "30021971566@sbi",
   upiPayeeName: "Sathya Sai Balavikas",
-  address: {
-    te: "బేగంపేట, హైదరాబాద్ 500 016",
-    en: "Begumpet, Hyderabad 500 016",
-  },
+  address: contactAddress,
   rates: [
     {
       id: "single",
@@ -224,7 +219,10 @@ export const subscription = {
         te: "సంవత్సర చందా — విదేశాలు (12 సంచికలు)",
         en: "Annual — Overseas (12 issues)",
       },
-      amount: { te: "₹2,000", en: "₹2,000" },
+      amount: {
+        te: "₹5,000 / $50 / £40",
+        en: "₹5,000 / $50 / £40",
+      },
     },
   ],
   /** Choose exactly one of these to pay. */

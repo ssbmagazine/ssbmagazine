@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { useI18n } from "../i18n/context";
 import { useTheme } from "../theme/context";
 import { assetUrl } from "../lib/issues";
-import { IconMoon, IconSun } from "./Icons";
+import { IconClose, IconMenu, IconMoon, IconSun } from "./Icons";
 
 const links = [
   { to: "/", key: "home" as const },
@@ -16,6 +17,21 @@ const links = [
 export function Header() {
   const { lang, setLang, t } = useI18n();
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
 
   return (
     <header className="masthead">
@@ -28,7 +44,21 @@ export function Header() {
         <img className="brand-logo circle" src={assetUrl("brand/sssb-logo.jpg")} alt="" />
       </div>
       <div className="toolbar">
-        <nav className="nav-links" aria-label={t.siteTitle}>
+        <button
+          type="button"
+          className="nav-menu-btn"
+          aria-expanded={menuOpen}
+          aria-controls="site-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <IconClose /> : <IconMenu />}
+          <span>{menuOpen ? t.nav.closeMenu : t.nav.menu}</span>
+        </button>
+        <nav
+          id="site-nav"
+          className={`nav-links${menuOpen ? " is-open" : ""}`}
+          aria-label={t.siteTitle}
+        >
           {links.map((link) => (
             <NavLink
               key={link.to}

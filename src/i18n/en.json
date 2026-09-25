@@ -9,17 +9,26 @@
     "about": "About",
     "subscribe": "Subscribe",
     "search": "Search",
-    "resources": "Resources"
+    "resources": "Resources",
+    "menu": "Menu",
+    "closeMenu": "Close"
   },
   "theme": {
     "light": "Light",
     "dark": "Dark"
   },
   "home": {
-    "kicker": "A Telugu monthly",
-    "intro": "A Telugu monthly, published and printed in Telugu, for Balavikas children and gurus — for twenty-four years.",
-    "heroCaption": "Bhagawan Sri Sathya Sai Baba with children.",
-    "heroAlt": "Bhagawan Sri Sathya Sai Baba standing with children",
+    "kicker": "Silver jubilee",
+    "intro": "A Telugu monthly, published and printed in Telugu, for Balavikas children and gurus — celebrating twenty-five years.",
+    "heroAlt": "Bhagawan Sri Sathya Sai Baba looking at the Balavikas magazine",
+    "slideshowLabel": "Cover pages through the years",
+    "slide2002Early": "Early cover — 2002",
+    "slide2002": "Cover — 2002",
+    "slide2014": "Title cover — December 2014",
+    "slide2015": "Title cover — November 2015",
+    "slide2020": "Title cover — November 2020",
+    "slide2023": "Title cover — November 2023",
+    "slide2025": "Title cover — November 2025",
     "latest": "Latest issue",
     "readIssue": "Read",
     "browseArchive": "Browse the archive"
@@ -36,8 +45,10 @@
     "open": "Open"
   },
   "reader": {
-    "close": "Back to archive",
-    "closeShort": "Archive",
+    "backArchive": "Back to archive",
+    "backArchiveShort": "Archive",
+    "backHome": "Home",
+    "backHomeShort": "Home",
     "page": "Page {0} of {1}",
     "pageShort": "{0}/{1}",
     "pageThumb": "Page {0}",
@@ -60,12 +71,10 @@
     "convenorsNote": "Education wing of Sri Sathya Sai Seva Organisations — Sri Sathya Sai Balvikas.",
     "printing": "Printing",
     "contact": "Write to us",
-    "bioSoon": "A short bio will appear here.",
     "registration": "Press registration",
     "regNumber": "PRGI number",
-    "regOwner": "Owner",
-    "regPlace": "Place of publication",
-    "regDate": "Registered on",
+    "regYear": "Registered since",
+    "postalReg": "Postal registration",
     "viewCertificate": "View certificate",
     "closeCertificate": "Close",
     "certificateTitle": "PRGI registration certificate",
@@ -106,8 +115,11 @@
   },
   "resources": {
     "title": "Resources",
-    "lede": "Flyers and promotional materials for use by Sai centres.",
-    "note": "Downloads will be added on this page once the files are ready."
+    "lede": "Silver jubilee materials for Sai centres.",
+    "flyerEn": "Silver jubilee flyer (English)",
+    "flyerTe": "Silver jubilee flyer (Telugu)",
+    "logo25": "25th anniversary logo",
+    "download": "Download"
   },
   "footer": {
     "blurb": "Sathya Sai Balavikas Telugu monthly magazine.",
