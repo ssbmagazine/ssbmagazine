@@ -30,8 +30,8 @@ export const teamSections: TeamSection[] = [
           en: "Dr. M. Lavanya Saraswathi",
         },
         role: {
-          te: "సంపాదకురాలు",
-          en: "Editor",
+          te: "ప్రధాన సంపాదకురాలు",
+          en: "Editor-in-Chief",
         },
         detail: {
           te: "ఎం.ఎ., ఎం.ఫిల్., పి హెచ్.డి.",
