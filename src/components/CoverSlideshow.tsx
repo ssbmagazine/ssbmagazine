@@ -12,6 +12,13 @@ const SLIDES = [
   { src: "brand/cover-slideshow/2025-11.jpg", labelKey: "slide2025" as const },
 ];
 
+function slideOffset(i: number, index: number, length: number) {
+  let d = i - index;
+  if (d > length / 2) d -= length;
+  if (d < -length / 2) d += length;
+  return d;
+}
+
 export function CoverSlideshow() {
   const { t } = useI18n();
   const [index, setIndex] = useState(0);
@@ -24,21 +31,35 @@ export function CoverSlideshow() {
   }, []);
 
   const slide = SLIDES[index];
+  const len = SLIDES.length;
 
   return (
-    <section className="cover-slideshow" aria-roledescription="carousel" aria-label={t.home.slideshowLabel}>
-      <div className="cover-slideshow-frame">
-        {SLIDES.map((item, i) => (
-          <img
-            key={item.src}
-            className={i === index ? "is-active" : undefined}
-            src={assetUrl(item.src)}
-            alt={t.home[item.labelKey]}
-          />
-        ))}
+    <section className="cover-carousel" aria-roledescription="carousel" aria-label={t.home.slideshowLabel}>
+      <div className="cover-carousel-stage">
+        {SLIDES.map((item, i) => {
+          const offset = slideOffset(i, index, len);
+          const abs = Math.abs(offset);
+          if (abs > 1) return null;
+          const role =
+            offset === 0 ? "center" : offset < 0 ? "prev" : "next";
+          return (
+            <button
+              key={item.src}
+              type="button"
+              className={`cover-carousel-card is-${role}`}
+              style={{ ["--card-offset" as string]: String(offset) }}
+              onClick={() => setIndex(i)}
+              aria-label={t.home[item.labelKey]}
+              aria-current={offset === 0 ? "true" : undefined}
+              tabIndex={offset === 0 ? 0 : -1}
+            >
+              <img src={assetUrl(item.src)} alt="" draggable={false} />
+            </button>
+          );
+        })}
       </div>
-      <p className="cover-slideshow-caption">{t.home[slide.labelKey]}</p>
-      <div className="cover-slideshow-dots" role="tablist" aria-label={t.home.slideshowLabel}>
+      <p className="cover-carousel-caption">{t.home[slide.labelKey]}</p>
+      <div className="cover-carousel-dots" role="tablist" aria-label={t.home.slideshowLabel}>
         {SLIDES.map((item, i) => (
           <button
             key={item.src}

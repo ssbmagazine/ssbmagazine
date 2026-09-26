@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useI18n } from "../i18n/context";
 import { useTheme } from "../theme/context";
@@ -19,6 +19,7 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -33,8 +34,27 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const sync = () => {
+      document.documentElement.style.setProperty(
+        "--header-offset",
+        `${el.getBoundingClientRect().height}px`,
+      );
+    };
+    sync();
+    const ro = new ResizeObserver(sync);
+    ro.observe(el);
+    window.addEventListener("resize", sync);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", sync);
+    };
+  }, [menuOpen, lang]);
+
   return (
-    <header className="masthead">
+    <header className="masthead" ref={headerRef}>
       <div className="brand-row">
         <img className="brand-logo circle" src={assetUrl("brand/logo.png")} alt="" />
         <div className="brand-titles">
